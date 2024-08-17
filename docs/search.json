@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "Test Page",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
     "section": "",
-    "text": "##favorite beverage tea iced americano"
+    "text": "A list of projects…\nMultiples of 3 or 5"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Majeedah’s Portfolio",
+    "section": "",
+    "text": "Hello World! My name is Majeedah I built this portfolio with quarto. test"
   },
   {
     "objectID": "about.html",
@@ -14,10 +21,10 @@
     "text": "Made with quarto…"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Majeedah’s Portfolio",
+    "objectID": "multiples_of_3_or_5.html",
+    "href": "multiples_of_3_or_5.html",
+    "title": "Multiples of 3 or 5",
     "section": "",
-    "text": "Hello World! My name is Majeedah I built this portfolio with quarto. test"
+    "text": "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all multiples of 3 or 5 belowe 1000.\nFrom: https://projecteuler.net/problem=1\nMy solution:\n\nsum_ = 0\nfor n in range(1,1000):\n    multiple_three = n%3\n    multiple_five = n%5\n    if multiple_three == 0 or multiple_five == 0:\n        sum_ = sum_ + n\nprint(\"Answer: \", sum_)\n\nAnswer:  233168\n\n\nIn this project, I created a simple algorithm to sort numbers into 3 categories: a multiple of 3, a multiple of 5 and neither. These numbers are added together with each iteration to form the final answer.\n17/08/2024"
   }
 ]
