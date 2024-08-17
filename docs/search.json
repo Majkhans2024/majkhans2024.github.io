@@ -1,16 +1,23 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quarto Portfolio",
+    "objectID": "test.html",
+    "href": "test.html",
+    "title": "Test Page",
     "section": "",
-    "text": "Hello World! My name is Majeedah I built this portfolio with quarto.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "##favorite beverage tea iced americano"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "Made with quarto…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Majeedah’s Portfolio",
+    "section": "",
+    "text": "Hello World! My name is Majeedah I built this portfolio with quarto. test"
   }
 ]
