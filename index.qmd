@@ -1,9 +1,8 @@
 ---
-title: "Quarto Portfolio"
+title: "Majeedah's Portfolio"
 ---
 
 Hello World!
 My name is Majeedah
 I built this portfolio with quarto.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+[test](test.qmd)
