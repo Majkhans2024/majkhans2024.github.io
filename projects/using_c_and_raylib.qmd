@@ -1,0 +1,92 @@
+---
+title: "Using C and Raylib"
+format: html
+---
+
+In this project, by goal was to learn both C and Raylib, and challenge myself to draw a window to the screen, create a sprite, and make it move. I didn't want to follow a tutorial however, as I feel that I learn much more from solving problems on my own, hence I used the Raylib C Cheatsheet (<https://www.raylib.com/cheatsheet/cheatsheet.html>) available on the Raylib website as my main guide after learning how a basic gameloop works.
+
+```default
+#include "raylib.h"
+
+//variables
+
+const int screenWidth = 800;
+const int screenHeight = 650;
+
+Texture2D ghostSprite;
+Rectangle ghostSrc;
+Rectangle ghostDest;
+
+int ghostSpeed = 1;
+
+bool running = true;
+
+//inputs
+
+void input(){
+    if(IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)){
+        ghostDest.y = ghostDest.y - ghostSpeed;
+    }
+    if(IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)){
+        ghostDest.y = ghostDest.y + ghostSpeed;
+    }
+    if(IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)){
+        ghostDest.x = ghostDest.x - ghostSpeed;
+    }
+    if(IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)){
+        ghostDest.x = ghostDest.x + ghostSpeed;
+    }
+}
+//updating the game
+
+void update(){
+    running = !WindowShouldClose();
+}
+//draws things
+
+void drawScene(){
+    DrawTexturePro(ghostSprite, ghostSrc, ghostDest, (Vector2){0,0}, 0, WHITE);
+}
+//puts things onto the screen
+
+void render(){
+    BeginDrawing();
+    ClearBackground(BLACK);
+    drawScene();
+    EndDrawing();
+}
+//initalisation
+
+void init(){
+    InitWindow(screenWidth, screenHeight, "Game");
+
+    ghostSprite = LoadTexture("resources/ghost.png");
+    ghostSrc = (Rectangle){0, 0, 500, 500};
+    ghostDest = (Rectangle){200, 200, 100, 100};
+}
+//quitting
+
+void quit(){
+    CloseWindow();
+}
+
+//main loop
+int main() {
+    init();
+
+    while(running){
+        input();
+        update();
+        render();
+    }
+
+    quit();
+    return 0;
+}
+```
+In this piece of code, everything was in one file, therefore, it was crucial to keep everything organised. In order to do this, I made use of functions and comments. One of the biggest challenges was adapting to C. Even though many things are similar to Python, the language I learned first, a lot of things are different, for example, variables have to be defined in advance (Eg: bool running = true) and statements are punctuated with semicolons - at first, I was forgetting semicolons all the time! The other big challenge was drawing the sprite onto the screen using DrawTexturePro(). The Source and Destination Rectangle system confused me at first, and it took a lot of tinkering with both the code and the image I drew, but eventually it made sense, and offered me much more control than the standard DrawTexture().  
+
+##### The game looks like this!
+{{<video res/game_demo.mp4>}}
+
+21/08/2024

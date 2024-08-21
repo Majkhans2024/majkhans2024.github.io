@@ -4,27 +4,34 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "A list of projects…\nMultiples of 3 or 5"
+    "text": "A list of projects…\nMultiples of 3 or 5\nUsing C and Raylib to make a game"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Majeedah’s Portfolio",
+    "objectID": "projects/multiples_of_3_or_5.html",
+    "href": "projects/multiples_of_3_or_5.html",
+    "title": "Multiples of 3 or 5",
     "section": "",
-    "text": "Hello World! My name is Majeedah I built this portfolio with quarto. test"
+    "text": "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all multiples of 3 or 5 belowe 1000.\nFrom: https://projecteuler.net/problem=1\nMy solution:\n\nsum_ = 0\nfor n in range(1,1000):\n    multiple_three = n%3\n    multiple_five = n%5\n    if multiple_three == 0 or multiple_five == 0:\n        sum_ = sum_ + n\nprint(\"Answer: \", sum_)\n\nAnswer:  233168\n\n\nIn this project, I created a simple algorithm to sort numbers into 3 categories: a multiple of 3, a multiple of 5 and neither. These numbers are added together with each iteration to form the final answer.\n17/08/2024"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Made with quarto…"
+    "text": "I make CS and Programming related posts so that I can display my work and learning journey!"
   },
   {
-    "objectID": "multiples_of_3_or_5.html",
-    "href": "multiples_of_3_or_5.html",
-    "title": "Multiples of 3 or 5",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Majeedah’s CS Portfolio",
     "section": "",
-    "text": "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all multiples of 3 or 5 belowe 1000.\nFrom: https://projecteuler.net/problem=1\nMy solution:\n\nsum_ = 0\nfor n in range(1,1000):\n    multiple_three = n%3\n    multiple_five = n%5\n    if multiple_three == 0 or multiple_five == 0:\n        sum_ = sum_ + n\nprint(\"Answer: \", sum_)\n\nAnswer:  233168\n\n\nIn this project, I created a simple algorithm to sort numbers into 3 categories: a multiple of 3, a multiple of 5 and neither. These numbers are added together with each iteration to form the final answer.\n17/08/2024"
+    "text": "Hello World!\nMy name is Majeedah!\nI built this portfolio with Quarto!"
+  },
+  {
+    "objectID": "projects/using_c_and_raylib.html",
+    "href": "projects/using_c_and_raylib.html",
+    "title": "Using C and Raylib",
+    "section": "",
+    "text": "In this project, by goal was to learn both C and Raylib, and challenge myself to draw a window to the screen, create a sprite, and make it move. I didn’t want to follow a tutorial however, as I feel that I learn much more from solving problems on my own, hence I used the Raylib C Cheatsheet (https://www.raylib.com/cheatsheet/cheatsheet.html) available on the Raylib website as my main guide after learning how a basic gameloop works.\n#include \"raylib.h\"\n\n//variables\n\nconst int screenWidth = 800;\nconst int screenHeight = 650;\n\nTexture2D ghostSprite;\nRectangle ghostSrc;\nRectangle ghostDest;\n\nint ghostSpeed = 1;\n\nbool running = true;\n\n//inputs\n\nvoid input(){\n    if(IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)){\n        ghostDest.y = ghostDest.y - ghostSpeed;\n    }\n    if(IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)){\n        ghostDest.y = ghostDest.y + ghostSpeed;\n    }\n    if(IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)){\n        ghostDest.x = ghostDest.x - ghostSpeed;\n    }\n    if(IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)){\n        ghostDest.x = ghostDest.x + ghostSpeed;\n    }\n}\n//updating the game\n\nvoid update(){\n    running = !WindowShouldClose();\n}\n//draws things\n\nvoid drawScene(){\n    DrawTexturePro(ghostSprite, ghostSrc, ghostDest, (Vector2){0,0}, 0, WHITE);\n}\n//puts things onto the screen\n\nvoid render(){\n    BeginDrawing();\n    ClearBackground(BLACK);\n    drawScene();\n    EndDrawing();\n}\n//initalisation\n\nvoid init(){\n    InitWindow(screenWidth, screenHeight, \"Game\");\n\n    ghostSprite = LoadTexture(\"resources/ghost.png\");\n    ghostSrc = (Rectangle){0, 0, 500, 500};\n    ghostDest = (Rectangle){200, 200, 100, 100};\n}\n//quitting\n\nvoid quit(){\n    CloseWindow();\n}\n\n//main loop\nint main() {\n    init();\n\n    while(running){\n        input();\n        update();\n        render();\n    }\n\n    quit();\n    return 0;\n}\nIn this piece of code, everything was in one file, therefore, it was crucial to keep everything organised. In order to do this, I made use of functions and comments. One of the biggest challenges was adapting to C. Even though many things are similar to Python, the language I learned first, a lot of things are different, for example, variables have to be defined in advance (Eg: bool running = true) and statements are punctuated with semicolons - at first, I was forgetting semicolons all the time! The other big challenge was drawing the sprite onto the screen using DrawTexturePro(). The Source and Destination Rectangle system confused me at first, and it took a lot of tinkering with both the code and the image I drew, but eventually it made sense, and offered me much more control than the standard DrawTexture().\n\nThe game looks like this!\n\n21/08/2024"
   }
 ]

@@ -1,8 +1,11 @@
 ---
-title: "Majeedah's Portfolio"
+title: "Majeedah's CS Portfolio"
 ---
 
+```default
 Hello World!
-My name is Majeedah
-I built this portfolio with quarto.
-[test](test.qmd)
+```
+My name is Majeedah!
+
+I built this portfolio with Quarto!
+

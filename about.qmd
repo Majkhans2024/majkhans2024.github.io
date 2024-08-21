@@ -2,4 +2,4 @@
 title: "About"
 ---
 
-Made with quarto...
+I make CS and Programming related posts so that I can display my work and learning journey!
