@@ -1,0 +1,66 @@
+---
+title: "Terminal Pomodoro Timer"
+format: html
+---
+
+Inspired by my frequent use of the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), I've decided to make a timer using Python, as well as the terminal to interact with the user.
+ Essentially, the user is asked 3 questions:
+(1) How long they want to work for,
+(2) How long they want to rest for,
+(3) If the information is correct.
+
+The very last question begins the loop of the timer. I used time.sleep to essentially not print anything to the screen until the specified wait period is over. The timer even tracks how many pomodoros you have completed, assuming that the time is unchanged and the loop hasn't been broken.
+
+```python
+import time
+
+#declare variables
+
+work_time = 0
+break_time = 0
+pomodoros = 0
+confirm = False
+answer = ""
+
+while confirm is False:
+    print("Welcome to the Pomodoro Timer!!\n")
+
+    work_time = float(input("How many minutes do you want to work for? "))
+    break_time = float(input("How many minutes do you want to rest for? "))
+
+    answer = input(f"Will you work for ({work_time}) minutes and rest for ({break_time}) minutes?(yes/no)")
+    if answer == "yes":
+        confirm = True
+
+#converting from minutes to seconds    
+work_time = int(work_time * 60)
+break_time = int(break_time * 60)
+
+#begin the loop
+
+while confirm == True:
+    print(f"Your timer has started. You are working for {work_time/60} minutes.")
+    time.sleep(work_time)
+    print(f"You are done working! You should rest for {break_time/60} minutes.")
+    time.sleep(break_time)
+    pomodoros += 1
+    
+    quit = input(f"You have completed {pomodoros} pomodoros. Want to continue? (y/n)")
+    if quit == "y":
+        confirm = True
+    else:
+        confirm = False
+
+print("Thank you for using my pomodoro timer!")
+
+
+```
+
+Upon reflection, there are 2 main flaws with this timer.
+
+(1)You cannot pause or change the timer midway through. The program forces you to complete a full pomodoro before being given the option to quit. In order to do this, it is likely that I will have to use something else other than time.sleep, in order to constantly be checking for input, such as a key being pressed, while still keeping the program running. Perhaps if there is no input detected in 1s, subtract one from the total time then proceed.
+
+(2)Lack of progress checking. There is no way in this current model to see how far along you are. I could solve it in a similar way to the above problem. By checking for a certain type of input, the console can print the time left.
+
+14/09/2024
+

@@ -9,3 +9,6 @@ format: html
 
 [Using C and Raylib to make a game](projects/using_c_and_raylib.qmd)
 
+
+[Terminal Pomodoro Timer](projects/pomodoro_timer.qmd)
+

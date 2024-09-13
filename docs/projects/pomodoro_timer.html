@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Multiples of 3 or 5 – Majeedah’s Portfolio</title>
+<title>Terminal Pomodoro Timer – Majeedah’s Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,21 +145,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#if-we-list-all-the-natural-numbers-below-10-that-are-multiples-of-3-or-5-we-get-3-5-6-and-9.-the-sum-of-these-multiples-is-23.-find-the-sum-of-all-multiples-of-3-or-5-belowe-1000." id="toc-if-we-list-all-the-natural-numbers-below-10-that-are-multiples-of-3-or-5-we-get-3-5-6-and-9.-the-sum-of-these-multiples-is-23.-find-the-sum-of-all-multiples-of-3-or-5-belowe-1000." class="nav-link active" data-scroll-target="#if-we-list-all-the-natural-numbers-below-10-that-are-multiples-of-3-or-5-we-get-3-5-6-and-9.-the-sum-of-these-multiples-is-23.-find-the-sum-of-all-multiples-of-3-or-5-belowe-1000.">If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all multiples of 3 or 5 belowe 1000.</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multiples of 3 or 5</h1>
+<h1 class="title">Terminal Pomodoro Timer</h1>
 </div>
 
 
@@ -176,27 +170,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="if-we-list-all-the-natural-numbers-below-10-that-are-multiples-of-3-or-5-we-get-3-5-6-and-9.-the-sum-of-these-multiples-is-23.-find-the-sum-of-all-multiples-of-3-or-5-belowe-1000." class="level3">
-<h3 class="anchored" data-anchor-id="if-we-list-all-the-natural-numbers-below-10-that-are-multiples-of-3-or-5-we-get-3-5-6-and-9.-the-sum-of-these-multiples-is-23.-find-the-sum-of-all-multiples-of-3-or-5-belowe-1000.">If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all multiples of 3 or 5 belowe 1000.</h3>
-<p>From: <a href="https://projecteuler.net/problem=1" class="uri">https://projecteuler.net/problem=1</a></p>
-<p>My solution:</p>
-<div id="e9f0948c" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sum_ <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">1000</span>):</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    multiple_three <span class="op">=</span> n<span class="op">%</span><span class="dv">3</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    multiple_five <span class="op">=</span> n<span class="op">%</span><span class="dv">5</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> multiple_three <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> multiple_five <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        sum_ <span class="op">=</span> sum_ <span class="op">+</span> n</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Answer: "</span>, sum_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Answer:  233168</code></pre>
-</div>
-</div>
-<p>In this project, I created a simple algorithm to sort numbers into 3 categories: a multiple of 3, a multiple of 5 and neither. These numbers are added together with each iteration to form the final answer.</p>
-<p>17/08/2024</p>
+<p>Inspired by my frequent use of the <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro Technique</a>, I’ve decided to make a timer using Python, as well as the terminal to interact with the user. Essentially, the user is asked 3 questions: (1) How long they want to work for, (2) How long they want to rest for, (3) If the information is correct.</p>
+<p>The very last question begins the loop of the timer. I used time.sleep to essentially not print anything to the screen until the specified wait period is over. The timer even tracks how many pomodoros you have completed, assuming that the time is unchanged and the loop hasn’t been broken.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#declare variables</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>work_time <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>break_time <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>pomodoros <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>confirm <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> confirm <span class="kw">is</span> <span class="va">False</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Welcome to the Pomodoro Timer!!</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    work_time <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"How many minutes do you want to work for? "</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    break_time <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"How many minutes do you want to rest for? "</span>))</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    answer <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"Will you work for (</span><span class="sc">{</span>work_time<span class="sc">}</span><span class="ss">) minutes and rest for (</span><span class="sc">{</span>break_time<span class="sc">}</span><span class="ss">) minutes?(yes/no)"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> answer <span class="op">==</span> <span class="st">"yes"</span>:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        confirm <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#converting from minutes to seconds    </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>work_time <span class="op">=</span> <span class="bu">int</span>(work_time <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>break_time <span class="op">=</span> <span class="bu">int</span>(break_time <span class="op">*</span> <span class="dv">60</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#begin the loop</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> confirm <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Your timer has started. You are working for </span><span class="sc">{</span>work_time<span class="op">/</span><span class="dv">60</span><span class="sc">}</span><span class="ss"> minutes."</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    time.sleep(work_time)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"You are done working! You should rest for </span><span class="sc">{</span>break_time<span class="op">/</span><span class="dv">60</span><span class="sc">}</span><span class="ss"> minutes."</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    time.sleep(break_time)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    pomodoros <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    quit <span class="op">=</span> <span class="bu">input</span>(<span class="ss">f"You have completed </span><span class="sc">{</span>pomodoros<span class="sc">}</span><span class="ss"> pomodoros. Want to continue? (y/n)"</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> quit <span class="op">==</span> <span class="st">"y"</span>:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        confirm <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        confirm <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Thank you for using my pomodoro timer!"</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Upon reflection, there are 2 main flaws with this timer.</p>
+<p>(1)You cannot pause or change the timer midway through. The program forces you to complete a full pomodoro before being given the option to quit. In order to do this, it is likely that I will have to use something else other than time.sleep, in order to constantly be checking for input, such as a key being pressed, while still keeping the program running. Perhaps if there is no input detected in 1s, subtract one from the total time then proceed.</p>
+<p>(2)Lack of progress checking. There is no way in this current model to see how far along you are. I could solve it in a similar way to the above problem. By checking for a certain type of input, the console can print the time left.</p>
+<p>14/09/2024</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

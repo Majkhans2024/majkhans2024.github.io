@@ -1,0 +1,93 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Terminal Pomodoro Timer\"\n",
+        "format: html\n",
+        "---\n",
+        "\n",
+        "\n",
+        "Inspired by my frequent use of the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique), I've decided to make one using Python, as well as the terminal to interact with the user. Essentially, the user is asked 3 questions:\n",
+        "(1) How long they want to work for\n",
+        "(2) How long they want to rest for\n",
+        "(3) Is the information correct\n",
+        "The very last question begins the loop of the timer. I used time.sleep to essentially not print anything to the screen until the specified wait period is over. The timer even tracks how many pomodoros you have completed, assuming that the time is unchanged and the loop hasn't been broken.\n"
+      ],
+      "id": "c82b4a7e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import time\n",
+        "\n",
+        "#declare variables\n",
+        "\n",
+        "work_time = 0\n",
+        "break_time = 0\n",
+        "pomodoros = 0\n",
+        "confirm = False\n",
+        "answer = \"\"\n",
+        "\n",
+        "while confirm is False:\n",
+        "    print(\"Welcome to the Pomodoro Timer!!\\n\")\n",
+        "\n",
+        "    work_time = float(input(\"How many minutes do you want to work for? \"))\n",
+        "    break_time = float(input(\"How many minutes do you want to rest for? \"))\n",
+        "\n",
+        "    answer = input(f\"Will you work for ({work_time}) minutes and rest for ({break_time}) minutes?(yes/no)\")\n",
+        "    if answer == \"yes\":\n",
+        "        confirm = True\n",
+        "\n",
+        "#converting from minutes to seconds    \n",
+        "work_time = int(work_time * 60)\n",
+        "break_time = int(break_time * 60)\n",
+        "\n",
+        "#begin the loop\n",
+        "\n",
+        "while confirm == True:\n",
+        "    print(f\"Your timer has started. You are working for {work_time/60} minutes.\")\n",
+        "    time.sleep(work_time)\n",
+        "    print(f\"You are done working! You should rest for {break_time/60} minutes.\")\n",
+        "    time.sleep(break_time)\n",
+        "    pomodoros += 1\n",
+        "    \n",
+        "    quit = input(f\"You have completed {pomodoros} pomodoros. Want to continue? (y/n)\")\n",
+        "    if quit == \"y\":\n",
+        "        confirm = True\n",
+        "    else:\n",
+        "        confirm = False\n",
+        "\n",
+        "print(\"Thank you for using my pomodoro timer!\")\n"
+      ],
+      "id": "e409a430",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Upon reflection, there are 2 main flaws with this timer.\n",
+        "(1)You cannot pause or change the timer midway through. The program forces you to complete a full pomodoro before being given the option to quit. In order to do this, it is likely that I will have to use something else other than time.sleep, in order to constantly be checking for input, such as a key being pressed, while still keeping the program running. Perhaps if there is no input detected in 1s, subtract one from the total time then proceed.\n",
+        "(2)Lack of progress checking. There is no way in this current model to see how far along you are. I could solve it in a similar way to the above problem. By checking for a certain type of input, the console can print the time left.\n",
+        "\n",
+        "14/09/2024\n"
+      ],
+      "id": "0153f240"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\Maj\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
