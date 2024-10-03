@@ -21,3 +21,5 @@ print("Answer: ", sum_)
 In this project, I created a simple algorithm to sort numbers into 3 categories: a multiple of 3, a multiple of 5 and neither. These numbers are added together with each iteration to form the final answer.
 
 17/08/2024
+
+

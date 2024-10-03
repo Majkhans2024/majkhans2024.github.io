@@ -6,9 +6,8 @@ format: html
 
 [Multiples of 3 or 5](projects/multiples_of_3_or_5.qmd)
 
-
 [Using C and Raylib to make a game](projects/using_c_and_raylib.qmd)
-
 
 [Terminal Pomodoro Timer](projects/pomodoro_timer.qmd)
 
+[Even Fibonnaci Numbers](project/even_fib_nums.qmd)

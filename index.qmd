@@ -9,3 +9,6 @@ My name is Majeedah!
 
 I built this portfolio with Quarto!
 
+I create various [projects](projects.qmd) that demonstrate both my passion for compsci as well as my technical skill. I'm most comfortable with Python and C, but I love to try others from time to time, such as C++, Go, Lua, and HTML. I love to make games, but I'm also passionate about solving real world problems using technology and maths. 
+
+
