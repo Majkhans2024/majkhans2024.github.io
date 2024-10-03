@@ -10,4 +10,4 @@ format: html
 
 [Terminal Pomodoro Timer](projects/pomodoro_timer.qmd)
 
-[Even Fibonnaci Numbers](project/even_fib_nums.qmd)
+[Even Fibonnaci Numbers](projects/even_fib_nums.qmd)
