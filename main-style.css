@@ -159,7 +159,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     transform: scale(1.25);
-    transition: transform 0.1s;
+    transition: transform 0.1s ease-in-out;
 }
 
 .right-menu img:hover {
