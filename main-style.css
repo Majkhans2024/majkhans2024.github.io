@@ -1,0 +1,181 @@
+body {
+    font-family: Bruno Ace, Arial;
+    background-image: url("img/island-slimmars13.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    
+}
+
+::selection {
+    background-color: dodgerblue;
+    text-shadow: 2px 2px 2px mediumvioletred;
+}
+
+
+.content {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.main-menu {
+    z-index: 1;
+    display: grid;
+    grid-template: 
+    "header header header"
+    "left-menu main right-menu"
+    "footer footer footer"
+    / 2fr 6fr 1fr;
+    grid-gap: 10px;
+    text-align: center;
+    width: 65%;
+    min-width: 600px;
+    padding-top: 3vh;
+    height: 50vh;
+}
+
+.main-menu > * {
+    border: 1px solid orange;
+    border-radius: 2px;
+    padding: 10px;
+    background-color: rgba(248, 248, 247, 0.837);
+    color: orange;
+    font-size: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+    background: none;
+    font-size: 70px;
+    text-shadow: 10px 13px 8px rgba(3, 2, 11, 0.79);
+    color: antiquewhite;
+    font-family: Fat Wobble Outlines, Bruno Ace, Arial;
+}
+
+.left-menu {
+    grid-area: left-menu;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-menu h1, .right-menu h1 {
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 15px;
+    text-decoration: underline 3px;
+}
+
+.left-menu a {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: Bruno Ace, Arial;
+    font-size: 16px;
+    border-color: orange;
+    border-style: ridge;
+    transition: color 0.2s, background-color 0.2s;
+    color: black;
+    text-decoration: none;
+}
+
+.left-menu a:hover {
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.left-menu a:active {
+    background-color: orange;
+}
+
+.left-menu a:visited {
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    grid-area: main;
+    min-height: 500px;
+    border: 3px solid orange;
+    flex-direction: column;
+    overflow: scroll;
+    text-shadow: 2px 2px 2px darkslategray;
+}
+
+.about, .updates {
+    background-color: orange;
+    border: solid 1px sienna;
+    color: rgb(248, 248, 247);
+    padding: 10px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.main-header {
+    text-decoration: underline 2px;
+    font-size: 22px;
+}
+
+.main-content p {
+    font-size: 14px;
+    padding: 2px;
+}
+
+.main-content img {
+    max-height: 150px;
+    transition: transform 0.2s;
+}
+
+.main-content img:hover {
+    padding: 15px;
+    transform: scale(1.25);
+}
+
+.update-content div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    border: 1px dashed;
+    padding: 5px;
+}
+
+.right-menu {
+    grid-area: right-menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-menu img {
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transform: scale(1.25);
+    transition: transform 0.1s;
+}
+
+.right-menu img:hover {
+    transform: scale(1.5);
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.footer h1 {
+    font-size: 16px;
+}
+
+.music-player {
+    color: dodgerblue;
+}
+
+

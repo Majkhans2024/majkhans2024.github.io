@@ -1,0 +1,71 @@
+@import "main-style.css";
+
+.header {
+    grid-area: header;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar a {
+    padding: 5px;
+    margin: 5px;
+    color: orange;
+    background-color: rgba(255, 255, 255, 0.244);
+    border: 3px groove orange;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar a:active {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.main-menu {
+    display: grid;
+    grid-template: 
+    "header header"
+    "sidebar main"
+    "footer footer"
+    / 1fr 4fr;
+}
+
+.main {
+    grid-area: main;
+    text-shadow: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.main > * {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    margin: 3px;
+}
+
+.main h1 {
+    padding: 0;
+}
+
+.main p {
+    font-size: 20px;
+}
+
+.footer {
+    grid-area: footer;
+}
+
