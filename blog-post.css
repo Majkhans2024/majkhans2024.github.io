@@ -8,12 +8,21 @@
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 15vw;
+}
+
+.sidebar p {
+    border: 5px groove orange;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: dodgerblue;
+    color: white;
 }
 
 .sidebar a {
-    padding: 5px;
+    padding: 20px;
     margin: 5px;
+    margin-top: 30px;
     color: orange;
     background-color: rgba(255, 255, 255, 0.244);
     border: 3px groove orange;
