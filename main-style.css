@@ -100,6 +100,16 @@ body {
     text-decoration: none;
 }
 
+.hit-counter {
+    border: 3px groove orange;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hit-counter a {
+    border: none;
+}
+
 .main {
     display: flex;
     grid-area: main;
